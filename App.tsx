@@ -59,7 +59,6 @@ const slotLengths = [30, 60];
 
 const App = () => {
   const [therapistData, setTherapistData] = useState([]);
-  const [textInputValue, setTextInputValue] = useState('');
   const [chosenTherapistData, setChosenTherapistData] = useState<TherapistData[]>([]);
   const [avatarData, setAvatarData] = useState({ bgc: '', initials: '' });
   const [error, setError] = useState('');
@@ -76,8 +75,10 @@ const App = () => {
   const insets = useSafeAreaInsets();
 
   useEffect(() => {
-    axios('http://localhost:5001/timeSlots')
+    axios
+      .get('https://rn-therapist-booking-expressbe.herokuapp.com/timeSlots')
       .then(res => {
+        console.log('res', res);
         setTherapistData(res.data);
 
         const therapistList = res.data.map(el => {

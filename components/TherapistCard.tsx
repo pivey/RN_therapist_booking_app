@@ -55,7 +55,7 @@ const TherapistCard = ({
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white', textAlign: 'center' }}>
             {therapistInitial}
           </Text>
           <View
